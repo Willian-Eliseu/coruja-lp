@@ -574,6 +574,10 @@ const closeModal = () => {
 </template>
 
 <style scoped>
+.teste {
+    color: red;
+}
+
 .section-divider {
     display: block;
     position: absolute;
