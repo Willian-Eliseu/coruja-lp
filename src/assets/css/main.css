@@ -37,3 +37,73 @@ html {
     opacity: 1;
     transform: translate(0, 0);
 }
+
+.position-relative {
+    position: relative;
+}
+
+.effect-1:hover {
+    border: solid 1px #ffc107 !important;
+    background-color: #04371a;
+    transform: translateY(-4px);
+    transition: all 0.3s ease-in-out;
+}
+
+.effect-2:hover {
+    transition: all 0.3s ease-in-out;
+    transform: translateY(-4px);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.effect-3:hover {
+    transform: translateY(-4px);
+    transition: all 0.3s ease-in-out;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.custom-modal {
+    border: none;
+    border-radius: 1rem;
+    padding: 0;
+    width: 90%;
+    max-width: 1140px;
+    /* Equivalente ao modal-xl */
+    background: #1a1a1a;
+    /* Cor de fundo escura conforme seu tema */
+    color: white;
+}
+
+.custom-modal::backdrop {
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(4px);
+}
+
+.modal-content-wrapper {
+    padding: 1.5rem;
+}
+
+.modal-header-custom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #333;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+}
+
+.btn-close-custom {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    line-height: 1;
+    cursor: pointer;
+}
+
+dialog[open] {
+    display: block;
+    position: fixed;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
