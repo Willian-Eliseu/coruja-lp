@@ -5,12 +5,28 @@ import AreaAluno from '@/assets/img/area_aluno.png'
 import CheckIcon from '@/assets/img/check_icon.png'
 import CheckIcon2 from '@/assets/img/check_icon_2.png'
 import JamilAnaAirplane from '@/assets/img/jamil_ana_airplane.png'
-import SergioCabral from '@/assets/img/sergio_cabral.png'
-import MariaLeticia from '@/assets/img/maria_leticia.png'
 import Guarantee from '@/assets/img/guarantee.png'
 import Lock from '@/assets/img/lock.png'
 import BlackLogo from '@/assets/img/black_logo.png'
+
+import alineMonteiro from '@/assets/img/aline_monteiro.webp'
+import andreaNoronha from '@/assets/img/andrea_noronha.webp'
+import cintiaPerico from '@/assets/img/cintia_perico.webp'
+import deboraVeiga from '@/assets/img/debora.webp'
+import geirizaChantre from '@/assets/img/geiriza_chantre.webp'
+import mariaLeticia from '@/assets/img/maria_leticia.webp'
+import nidiaChicralla from '@/assets/img/nidia_chicralla.webp'
+import rebecaSpinelli from '@/assets/img/rebeca.webp'
+import sergioCabral from '@/assets/img/sergio_cabral.webp'
+
 import { ref } from 'vue'
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
 
 const vantagensLista = [
     { id: 1, content: 'Está se preparando para revalidar o diploma médico em Portugal ou se preparando para a PNA' },
@@ -22,7 +38,7 @@ const vantagensLista = [
 ];
 
 const dadosLista = [
-    { id: 1, title: '+800', content: 'Médicos aprovados' },
+    { id: 1, title: '+1000', content: 'Médicos aprovados' },
     { id: 2, title: '84%', content: 'Aprovação na 1ª Fase 2024' },
     { id: 3, title: '92%', content: 'Aprovação na 1ª Fase 2025' },
     { id: 4, title: '99%', content: 'Aprovação na 2ª Fase 2025' }
@@ -58,6 +74,18 @@ const faqItems = [
     }
 ];
 
+const depoimentosList = [
+    { id: 1, name: 'DRA. ALINE MONTEIRO', videoKey: 'yA3baoN7p2q9VfLc', img: alineMonteiro, tipo: 'Aluna CoruJÁ' },
+    { id: 2, name: 'DRA. ANDRÉA NORONHA', videoKey: 'HzSrtNIm9ybzUL0P', img: andreaNoronha, tipo: 'Aluna CoruJÁ' },
+    { id: 3, name: 'DRA. CÍNTIA PERICO', videoKey: 'Qzzlnnbp7rCi8xpz', img: cintiaPerico, tipo: 'Aluna CoruJÁ' },
+    { id: 4, name: 'DRA. DÉBORA VEIGA', videoKey: 'X2ySnvT1wFUim2uv', img: deboraVeiga, tipo: 'Aluna CoruJÁ' },
+    { id: 5, name: 'DRA. GEIRIZA CHANTRE', videoKey: 'OK6UXigw69H6M5hb', img: geirizaChantre, tipo: 'Aluna CoruJÁ' },
+    { id: 6, name: 'DRA. MARIA LETÍCIA', videoKey: 'pIF4TbCOcePiHkGp', img: mariaLeticia, tipo: 'Médica validada em Portugal' },
+    { id: 7, name: 'DRA. NIDIA CHICRALLA', videoKey: 'LrUDNUwclZLgdS3o', img: nidiaChicralla, tipo: 'Aluna CoruJÁ' },
+    { id: 8, name: 'DRA. REBECA SPINELLI', videoKey: 'SQVOdX4MQEDF9gBn', img: rebecaSpinelli, tipo: 'Aluna CoruJÁ' },
+    { id: 9, name: 'DR. SÉRGIO CABRAL', videoKey: '5RAc5SiHPF8mcU3G', img: sergioCabral, tipo: 'Aluno CoruJÁ' },
+];
+
 const modalVideo = ref(null);
 const currentPlayerUrl = ref('');
 const currentDoctorName = ref('');
@@ -72,6 +100,8 @@ const closeModal = () => {
     modalVideo.value.close();
     currentPlayerUrl.value = '';
 }
+
+const modules = [Navigation, Pagination, Autoplay];
 
 </script>
 
@@ -314,7 +344,7 @@ const closeModal = () => {
             </div>
         </section>
 
-        <!-- depoimentos dos nossos alunos -->
+        <!-- depoimentos dos nossos alunos --
         <section style="background-color: #032612">
             <div class="container py-5">
                 <div class="row mb-4">
@@ -356,6 +386,40 @@ const closeModal = () => {
                         </div>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col-auto mx-auto" v-reveal="'bottom'">
+                        <button class="btn btn-danger py-3 px-5 btn-lg effect-3">
+                            Quero garantir minha vaga <span class="fw-semibold">com desconto</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        !--  -->
+        <section style="background-color: #032612" class="py-5">
+            <div class="container">
+                <h1 class="fw-bold text-center text-white mb-5">Depoimentos de Nossos Alunos</h1>
+
+                <swiper :modules="modules" :slides-per-view="1" :space-between="20" :loop="true"
+                    :autoplay="{ delay: 5000 }" :navigation="true" :pagination="{ clickable: true }" :breakpoints="{
+                        '768': { slidesPerView: 2 },
+                        '1024': { slidesPerView: 3 }
+                    }" class="pb-5">
+                    <swiper-slide v-for="item in depoimentosList" :key="item.id" v-reveal="'bottom'">
+                        <div class="card-depoimento h-100" role="button" @click="openPlayer(item.videoKey, item.name)">
+                            <img :src="item.img" :alt="item.name" class="w-100 border border-white rounded-top-4">
+                            <div class="py-3 text-center rounded-bottom-4 border border-white bg-transparent">
+                                <p class="fs-5 fw-semibold mb-0" style="color: #14AE5C">
+                                    {{ item.name }}
+                                </p>
+                                <p class="small text-white fw-light mb-0">
+                                    {{ item.tipo }}
+                                </p>
+                            </div>
+                        </div>
+                    </swiper-slide>
+                </swiper>
+
                 <div class="row">
                     <div class="col-auto mx-auto" v-reveal="'bottom'">
                         <button class="btn btn-danger py-3 px-5 btn-lg effect-3">
@@ -493,7 +557,7 @@ const closeModal = () => {
                             <div class="row mb-3">
                                 <div class="col-auto mx-auto" v-reveal="'bottom'">
                                     <button class="btn btn-danger py-3 px-5 btn-lg effect-3">
-                                        Comprar Individual
+                                        Comprar Manual
                                     </button>
                                 </div>
                             </div>
@@ -574,10 +638,6 @@ const closeModal = () => {
 </template>
 
 <style scoped>
-.teste {
-    color: red;
-}
-
 .section-divider {
     display: block;
     position: absolute;

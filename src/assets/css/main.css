@@ -107,3 +107,28 @@ dialog[open] {
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+:deep(.swiper-button-next),
+:deep(.swiper-button-prev) {
+    color: #14AE5C !important;
+}
+
+:deep(.swiper-pagination-bullet-active) {
+    background: #14AE5C !important;
+}
+
+.card-depoimento {
+    transition: transform 0.3s ease;
+}
+
+.card-depoimento:hover {
+    transform: scale(1.02);
+}
+
+.swiper-button-prev {
+    color: #14AE5C !important;
+}
+
+.swiper-button-next {
+    color: #14AE5C !important;
+}
