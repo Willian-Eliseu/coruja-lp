@@ -123,7 +123,7 @@ const modules = [Navigation, Pagination, Autoplay];
                         </h1>
                         <p class="fs-5 mb-4 text-light" v-reveal="'bottom'">
                             Tudo o que você precisa para se preparar com segurança, foco e resultados. O <span
-                                class="fw-semibold">método validado por mais de 800 médicos aprovados.</span>
+                                class="fw-semibold">método validado por mais de 1000 médicos aprovados.</span>
                         </p>
                         <!-- falta a configuração do clique -->
                         <button class="btn btn-danger py-3 px-5 btn-lg mb-4 effect-3">
@@ -273,8 +273,8 @@ const modules = [Navigation, Pagination, Autoplay];
                             </p>
                             <p class="fs-5 mb-4">
                                 Eles não são apenas tutores; eles são os recordistas. O Dr. Jamil obteve a maior nota da
-                                história no processo de revalidação pela Faculdade de Lisboa. A Dra. Ana Carolina traz o
-                                rigor acadêmico necessário para vencer a banca examinadora portuguesa.
+                                história no processo de revalidação pela Universidade do Porto. A Dra. Ana Carolina traz
+                                o rigor acadêmico necessário para vencer a banca examinadora portuguesa.
                             </p>
                             <p class="fs-5 mb-4 text-success fw-semibold">
                                 Na CoruJÁ, você não estuda com quem leu o manual, você estuda com quem escreveu o novo
@@ -344,58 +344,7 @@ const modules = [Navigation, Pagination, Autoplay];
             </div>
         </section>
 
-        <!-- depoimentos dos nossos alunos --
-        <section style="background-color: #032612">
-            <div class="container py-5">
-                <div class="row mb-4">
-                    <div class="col">
-                        <h1 class="fw-bold text-center text-white">
-                            Depoimentos de Nossos Alunos
-                        </h1>
-                    </div>
-                </div>
-                <div class="row mb-4">
-                    <div class="col-lg-9 col-xxl-6 mx-auto">
-                        <div class="row">
-                            <div class="col-md-6 p-3 mb-3 mb-md-0" role="button"
-                                @click="openPlayer('5RAc5SiHPF8mcU3G', 'DR. SÉRGIO CABRAL')" v-reveal="'bottom'">
-                                <img :src="SergioCabral" alt="Dr Sérgio Cabral"
-                                    class="w-100 border border-white rounded-top-4">
-                                <div class="py-3 text-center rounded-bottom-4 border border-white">
-                                    <p class="fs-4 fw-semibold mb-0" style="color: #14AE5C">
-                                        DR. SÉRGIO CABRAL
-                                    </p>
-                                    <p class="fs-5 text-white fw-light">
-                                        Ginecologista - Aluno CoruJÁ
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="col-md-6 p-3" role="button"
-                                @click="openPlayer('pIF4TbCOcePiHkGp', 'DRA. MARIA LETÍCIA')" v-reveal="'bottom'">
-                                <img :src="MariaLeticia" alt="Dr Sérgio Cabral"
-                                    class="w-100 border border-white rounded-top-4">
-                                <div class="py-3 text-center rounded-bottom-4 border border-white">
-                                    <p class="fs-4 fw-semibold mb-0" style="color: #14AE5C">
-                                        DRA. MARIA LETÍCIA
-                                    </p>
-                                    <p class="fs-5 text-white fw-light">
-                                        Médica Validada em Portugal
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-auto mx-auto" v-reveal="'bottom'">
-                        <button class="btn btn-danger py-3 px-5 btn-lg effect-3">
-                            Quero garantir minha vaga <span class="fw-semibold">com desconto</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </section>
-        !--  -->
+        <!-- depoimentos dos nossos alunos -->
         <section style="background-color: #032612" class="py-5">
             <div class="container">
                 <h1 class="fw-bold text-center text-white mb-5">Depoimentos de Nossos Alunos</h1>
