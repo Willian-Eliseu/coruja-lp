@@ -132,3 +132,7 @@ dialog[open] {
 .swiper-button-next {
     color: #14AE5C !important;
 }
+
+.preserve-break {
+    white-space: pre-line;
+}

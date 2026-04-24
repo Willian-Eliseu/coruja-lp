@@ -71,6 +71,10 @@ const faqItems = [
     {
         pergunta: "Por quanto tempo tenho acesso?",
         resposta: "Você terá acesso por 12 meses, com possibilidade de renovação."
+    },
+    {
+        pergunta: "Existe garantia de compra?",
+        resposta: "Sim. \n Você tem 7 dias de garantia após a confirmação da compra. \n Durante esse período, você pode acessar toda a plataforma, conhecer o método CoruJÁ, assistir às aulas e entender como funciona na prática. \n Se dentro desse prazo você sentir que não é para você, pode solicitar o reembolso integral, sem burocracia."
     }
 ];
 
@@ -103,6 +107,11 @@ const closeModal = () => {
 
 const modules = [Navigation, Pagination, Autoplay];
 
+const openLink = (url) => {
+    const newUrl = `https://corujamentoria.com.br/${url}`
+    window.open(newUrl, '_self');
+}
+
 </script>
 
 <template>
@@ -126,7 +135,7 @@ const modules = [Navigation, Pagination, Autoplay];
                                 class="fw-semibold">método validado por mais de 1000 médicos aprovados.</span>
                         </p>
                         <!-- falta a configuração do clique -->
-                        <button class="btn btn-danger py-3 px-5 btn-lg mb-4 effect-3">
+                        <button class="btn btn-danger py-3 px-5 btn-lg mb-4 effect-3" @click="openLink('combo')">
                             Quero garantir minha vaga <span class="fw-semibold">com desconto</span>
                         </button>
                     </div>
@@ -161,7 +170,7 @@ const modules = [Navigation, Pagination, Autoplay];
                 </div>
                 <div class="row">
                     <div class="col-auto mx-auto" v-reveal="'bottom'">
-                        <button class="btn btn-danger py-3 px-5 btn-lg mb-4 effect-3">
+                        <button class="btn btn-danger py-3 px-5 btn-lg mb-4 effect-3" @click="openLink('mentoria')">
                             Quero garantir minha vaga <span class="fw-semibold">com desconto</span>
                         </button>
                     </div>
@@ -190,7 +199,7 @@ const modules = [Navigation, Pagination, Autoplay];
                 </div>
                 <div class="row">
                     <div class="col-auto mx-auto" v-reveal="'bottom'">
-                        <button class="btn btn-danger py-3 px-5 btn-lg effect-3">
+                        <button class="btn btn-danger py-3 px-5 btn-lg effect-3" @click="openLink('mentoria')">
                             Quero garantir minha vaga <span class="fw-semibold">com desconto</span>
                         </button>
                     </div>
@@ -252,7 +261,7 @@ const modules = [Navigation, Pagination, Autoplay];
                 </div>
                 <div class="row">
                     <div class="col-auto mx-auto" v-reveal="'bottom'">
-                        <button class="btn btn-danger py-3 px-5 btn-lg effect-3">
+                        <button class="btn btn-danger py-3 px-5 btn-lg effect-3" @click="openLink('mentoria')">
                             Quero garantir minha vaga <span class="fw-semibold">com desconto</span>
                         </button>
                     </div>
@@ -282,7 +291,8 @@ const modules = [Navigation, Pagination, Autoplay];
                             </p>
                             <div class="row">
                                 <div class="col-auto position-relative z-3" v-reveal="'bottom'">
-                                    <button class="btn btn-danger py-3 px-5 btn-lg effect-3">
+                                    <button class="btn btn-danger py-3 px-5 btn-lg effect-3"
+                                        @click="openLink('mentoria')">
                                         Quero garantir minha vaga <span class="fw-semibold">com desconto</span>
                                     </button>
                                 </div>
@@ -371,7 +381,7 @@ const modules = [Navigation, Pagination, Autoplay];
 
                 <div class="row">
                     <div class="col-auto mx-auto" v-reveal="'bottom'">
-                        <button class="btn btn-danger py-3 px-5 btn-lg effect-3">
+                        <button class="btn btn-danger py-3 px-5 btn-lg effect-3" @click="openLink('mentoria')">
                             Quero garantir minha vaga <span class="fw-semibold">com desconto</span>
                         </button>
                     </div>
@@ -434,7 +444,7 @@ const modules = [Navigation, Pagination, Autoplay];
 
                 <div class="row mb-4">
                     <div class="col-auto mx-auto" v-reveal="'bottom'">
-                        <button class="btn btn-danger py-3 px-5 btn-lg effect-3">
+                        <button class="btn btn-danger py-3 px-5 btn-lg effect-3" @click="openLink('combo')">
                             QUERO GARANTIR MINHA APROVAÇÃO
                         </button>
                     </div>
@@ -444,7 +454,7 @@ const modules = [Navigation, Pagination, Autoplay];
                     <div class="col-lg-auto mx-auto" v-reveal="'bottom'">
                         <p class="text-secondary">
                             <img :src="Guarantee" alt="" width="30"> Garantia de 7 dias
-                            &nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;
                             <img :src="Lock" alt="" width="30"> Pagamento Seguro
                         </p>
                     </div>
@@ -465,7 +475,8 @@ const modules = [Navigation, Pagination, Autoplay];
                             </p>
                             <div class="row mb-3">
                                 <div class="col-auto mx-auto" v-reveal="'bottom'">
-                                    <button class="btn btn-danger py-3 px-5 btn-lg effect-3">
+                                    <button class="btn btn-danger py-3 px-5 btn-lg effect-3"
+                                        @click="openLink('mentoria')">
                                         Comprar Mentoria
                                     </button>
                                 </div>
@@ -485,7 +496,8 @@ const modules = [Navigation, Pagination, Autoplay];
                             </p>
                             <div class="row mb-3">
                                 <div class="col-auto mx-auto" v-reveal="'bottom'">
-                                    <button class="btn btn-danger py-3 px-5 btn-lg effect-3">
+                                    <button class="btn btn-danger py-3 px-5 btn-lg effect-3"
+                                        @click="openLink('revisao')">
                                         Comprar Revisão
                                     </button>
                                 </div>
@@ -505,7 +517,8 @@ const modules = [Navigation, Pagination, Autoplay];
                             </p>
                             <div class="row mb-3">
                                 <div class="col-auto mx-auto" v-reveal="'bottom'">
-                                    <button class="btn btn-danger py-3 px-5 btn-lg effect-3">
+                                    <button class="btn btn-danger py-3 px-5 btn-lg effect-3"
+                                        @click="openLink('manual')">
                                         Comprar Manual
                                     </button>
                                 </div>
@@ -540,8 +553,7 @@ const modules = [Navigation, Pagination, Autoplay];
                                 </h2>
                                 <div :id="'flush-collapse' + index" class="accordion-collapse collapse"
                                     data-bs-parent="#accordionListFAQ">
-                                    <div class="accordion-body">
-                                        {{ item.resposta }}
+                                    <div class="accordion-body preserve-break" v-html="item.resposta">
                                     </div>
                                 </div>
                             </div>
